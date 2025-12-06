@@ -399,6 +399,8 @@ public class SingularityConfiguration extends Configuration {
 
   private boolean proxyRunNowToLeader = true;
 
+  private Optional<Integer> expectedRacksCount = Optional.empty();
+
   @JsonProperty("crashLoop")
   private CrashLoopConfiguration crashLoopConfiguration = new CrashLoopConfiguration();
 
@@ -1691,6 +1693,14 @@ public class SingularityConfiguration extends Configuration {
 
   public void setSqlFallBackToBytesFields(boolean sqlFallBackToBytesFields) {
     this.sqlFallBackToBytesFields = sqlFallBackToBytesFields;
+  }
+
+  public Optional<Integer> getExpectedRacksCount() {
+    return expectedRacksCount;
+  }
+
+  public void setExpectedRacksCount(Optional<Integer> expectedRacksCount) {
+    this.expectedRacksCount = expectedRacksCount;
   }
 
   public CrashLoopConfiguration getCrashLoopConfiguration() {
